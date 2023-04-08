@@ -19,6 +19,7 @@ public class BankAccount {
         //Each digit of an account number can lie between 0 and 9 (both inclusive)
         //Generate account number having given number of 'digits' such that the sum of digits is equal to 'sum'
         if(sum>9*digits){
+            //If it is not possible, throw "Account Number can not be generated" exception
             throw new Exception("Account Number can not be generated");
         }
         while(sum>9){
@@ -26,13 +27,10 @@ public class BankAccount {
             sum-=9;
         }
         this.accountNumber+=sum;
-        if(this.accountNumber.length()<digits){
+        while(this.accountNumber.length()<digits){
             this.accountNumber+="0";
         }
-
-        //If it is not possible, throw "Account Number can not be generated" exception
         return this.accountNumber;
-
     }
 
     public void deposit(double amount) {

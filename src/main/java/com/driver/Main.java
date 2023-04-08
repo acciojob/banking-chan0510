@@ -3,13 +3,13 @@ package com.driver;
 public class Main {
     public static void main(String[] args) throws Exception {
         BankAccount acc=new BankAccount("Deepak",12000,1000);
-        System.out.println(acc.generateAccountNumber(6,32));
+        System.out.println(acc.generateAccountNumber(23,78));
         System.out.println("Total Balance: "+acc.getBalance());
         acc.deposit(2000);
         System.out.println("Total Balance: "+acc.getBalance());
         acc.withdraw(10000);
         System.out.println("Total Balance: "+acc.getBalance());
-        acc.withdraw(4000);
+       // acc.withdraw(4000);
         System.out.println("Total Balance: "+acc.getBalance());
 
     }
