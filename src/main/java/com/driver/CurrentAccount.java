@@ -9,19 +9,14 @@ public class CurrentAccount extends BankAccount{
     private  String tradeLicenseId; //consists of Uppercase English characters only
 
     public CurrentAccount(String name, double balance, String tradeLicenseId) throws Exception {
-
-        super(name,balance,5000);
         // minimum balance is 5000 by default. If balance is less than 5000, throw "Insufficient Balance" exception
+        super(name,balance,5000);
         if(balance<5000) throw new Exception("Insufficient Balance");
-
         this.tradeLicenseId=tradeLicenseId;
-
-
     }
 
     public void validateLicenseId() throws Exception {
         // A trade license Id is said to be valid if no two consecutive characters are same
-        int n=this.tradeLicenseId.length();
         if(!isValidTradeLicenseId(tradeLicenseId)) {
             tradeLicenseId = reArrangeTradeLicenseId(tradeLicenseId);
             if(tradeLicenseId.length()==0) throw new Exception("Valid License can not be generated");
@@ -58,7 +53,7 @@ public class CurrentAccount extends BankAccount{
         char[] res = new char[S.length()];
         int idx = 0;
         while (hash[letter] > 0) {
-            res[idx] = (char) (letter + 'a');
+            res[idx] = (char) (letter + 'A');
             idx += 2;
             hash[letter]--;
         }
@@ -67,7 +62,7 @@ public class CurrentAccount extends BankAccount{
                 if (idx >= res.length) {
                     idx = 1;
                 }
-                res[idx] = (char) (i + 'a');
+                res[idx] = (char) (i + 'A');
                 idx += 2;
                 hash[i]--;
             }
