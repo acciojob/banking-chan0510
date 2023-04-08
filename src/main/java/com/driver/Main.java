@@ -2,9 +2,15 @@ package com.driver;
 
 public class Main {
     public static void main(String[] args) throws Exception {
-        CurrentAccount account=new CurrentAccount("Ravi Ranjan",15000.0,"AAAAAABBNN");
-        account.validateLicenseId();
-        System.out.println(account.getTradeLicenseId());
+        BankAccount acc=new BankAccount("Deepak",12000,1000);
+        System.out.println(acc.generateAccountNumber(6,32));
+        System.out.println("Total Balance: "+acc.getBalance());
+        acc.deposit(2000);
+        System.out.println("Total Balance: "+acc.getBalance());
+        acc.withdraw(10000);
+        System.out.println("Total Balance: "+acc.getBalance());
+        acc.withdraw(4000);
+        System.out.println("Total Balance: "+acc.getBalance());
 
     }
 }
